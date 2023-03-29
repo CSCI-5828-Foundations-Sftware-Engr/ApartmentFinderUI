@@ -31,8 +31,8 @@ app.use(bodyParser.json());
 require("./routes/login.js")(app);
 require("./routes/register.js")(app);
 
-// const PORT = process.env.PORT || 5000;
-const PORT = 6999;
+const PORT = process.env.PORT || 6999;
+// const PORT = 6999;
 
 const path = require("path");
 
