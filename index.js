@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 
 //import your models
-require("./models/user");
+require("./models/User");
 
 mongoose
   //   .connect(process.env.MONGODB_CONNECTION_STRING, {
