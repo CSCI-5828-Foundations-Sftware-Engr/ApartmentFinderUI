@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 async function loginUser(credentials) {
   // return fetch("https://apartmentfinder.herokuapp.com/api/v1/login", {
-  return fetch("http://localhost:process.env.PORT/login", {
+  return fetch("http://localhost:${PORT}/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -26,7 +26,7 @@ async function loginUser(credentials) {
 
 async function registerUser(credentials) {
   // return fetch("https://apartmentfinder.herokuapp.com/api/v1/register", {
-  return fetch("http://localhost:process.env.PORT/register", {
+  return fetch("http://localhost:${PORT}/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
