@@ -19,20 +19,5 @@ module.exports = (app) => {
         res.status(202)
         res.send({ message: "notRegistered" });
       }}))
-    // const userResult = user.findOne({ userName: userName });
-    // console.log("Inside login node")
-    // console.log(userResult)
-
-     //user.findOne({ userName: userName }, (err, user) => {
-    // if (userResult) {
-    //   if (password === userResult.password) {
-    //     res.send({ message: "login sucess", user: userResult });
-    //   } else {
-    //     res.send({ message: "wrong credentials" });
-    //   }
-    // } else {
-    //   res.send("not registered");
-    // }
-     //});
   });
 };
