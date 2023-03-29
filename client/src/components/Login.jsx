@@ -3,8 +3,9 @@ import "./Login.css";
 import PropTypes from "prop-types";
 
 async function loginUser(credentials) {
+  console.log("Inside login")
   // return fetch("https://apartmentfinder.herokuapp.com/api/v1/login", {
-  return fetch("/login", {
+  return fetch("http://localhost:6999/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -12,7 +13,12 @@ async function loginUser(credentials) {
     body: JSON.stringify(credentials),
   })
     .then((response) => {
-      if (!response.ok) {
+      console.log(response.status)
+      //TODO
+      //If response status is 200, it means that user has been found in database
+      //If response status is 201, it means that user has been found in database but password is incorrect
+      //If response status is 202, it means that user is not present in databse and hence redirect to register
+      if (response.status == 200) {
         return "error";
         // throw new Error(response.statusText);
       } else {
@@ -26,7 +32,7 @@ async function loginUser(credentials) {
 
 async function registerUser(credentials) {
   // return fetch("https://apartmentfinder.herokuapp.com/api/v1/register", {
-  return fetch("/register", {
+  return fetch("http://localhost:6999/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -35,6 +41,11 @@ async function registerUser(credentials) {
     body: JSON.stringify(credentials),
   })
     .then((response) => {
+      //TODO
+      //if the response status is 200, then the user has been registered.
+      //if the response status is 404, then the user has not been registered.(Because username was already there)
+      //can we add a functionality that all the fields in the register form are added by the user?
+      console.log(response.status)
       if (!response.ok) {
         throw new Error(response.statusText);
       }
