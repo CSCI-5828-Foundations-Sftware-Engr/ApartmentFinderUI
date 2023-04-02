@@ -19,7 +19,8 @@ Innovation Insurgents - FSE Spring 2023
 
 
 
-##Build instructions:
-To run on localhost, In root directory, run command "npm start" to start the server.
-In another terminal, "cd client && npm start" to start the client.
-Launch http://localhost:3000/ in a browser.
+## Build instructions:
+
+- To run on localhost, In root directory, run command "npm start" to start the server.
+- In another terminal, "cd client && npm start" to start the client.
+- Launch http://localhost:3000/ in a browser.
