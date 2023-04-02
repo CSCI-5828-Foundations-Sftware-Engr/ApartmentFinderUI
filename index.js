@@ -12,6 +12,8 @@ app.use(cors());
 require("./models/User");
 require("./models/Property");
 require("./models/Appointment");
+require("./models/Review");
+require("./models/ReviewAnalysis");
 
 mongoose
   //   .connect(process.env.MONGODB_CONNECTION_STRING, {
@@ -35,6 +37,7 @@ require("./routes/register.js")(app);
 require("./routes/allproperties.js")(app);
 require("./routes/property.js")(app);
 require("./routes/bookappointment.js")(app);
+require("./routes/review.js")(app);
 
 const PORT = process.env.PORT || 6999;
 // const PORT = 6999;
