@@ -3,81 +3,79 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PropertyModelSchema = new Schema({
-    "propertyId": {
-        "type": "String"
+    propertyId: {
+        type: String
       },
-      "propertyType": {
-        "type": "String"
+      propertyType: {
+        type: String
       },
-      "listingStatus": {
-        "type": "String"
+      listingStatus: {
+        type: String
       },
-      "beds": {
-        "type": "Number"
+      beds: {
+        type: Number
       },
-      "address": {
-        "city": {
-          "type": "String"
+      address: {
+        city: {
+          type: String
         },
-        "country": {
-          "type": "String"
+        country: {
+          type: String
         },
-        "county": {
-          "type": "String"
+        county: {
+          type: String
         },
-        "lat": {
-          "type": "Number"
+        lat: {
+          type: Number
         },
-        "line": {
-          "type": "String"
+        line: {
+          type: String
         },
-        "postalCode": {
-          "type": "Date"
+        postalCode: {
+          type: Date
         },
-        "stateCode": {
-          "type": "String"
+        stateCode: {
+          type: String
         },
-        "lon": {
-          "type": "Number"
+        lon: {
+          type: Number
         },
-        "buildingSizeUnit": {
-          "type": "String"
+        buildingSizeUnit: {
+          type: String
         }
       },
-      "details": {
-        "bathsMax": {
-          "type": "Number"
+      details: {
+        bathsMax: {
+          type: Number
         },
-        "bathsMin": {
-          "type": "Number"
+        bathsMin: {
+          type: Number
         },
-        "bedsMax": {
-          "type": "Number"
+        bedsMax: {
+          type: Number
         },
-        "bedsMin": {
-          "type": "Number"
+        bedsMin: {
+          type: Number
         },
-        "priceMax": {
-          "type": "Number"
+        priceMax: {
+          type: Number
         },
-        "priceMin": {
-          "type": "Number"
+        priceMin: {
+          type: Number
         },
-        "sqftMax": {
-          "type": "Number"
+        sqftMax: {
+          type: Number
         },
-        "sqftMin": {
-          "type": "Number"
+        sqftMin: {
+          type: Number
         }
       },
-      "photoCount": {
-        "type": "Number"
+      photoCount: {
+        type: Number
       },
-      "photos": {
-        "type": [
-          "Mixed"
-        ]
-      }
+      photos: [{
+        href: {type:String}
+      }]
 });
 
-module.exports = mongoose.model("propertyData", PropertyModelSchema);
+module.exports = mongoose.model("propertyData", PropertyModelSchema, "propertyData");

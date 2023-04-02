@@ -10,6 +10,7 @@ app.use(cors());
 
 //import your models
 require("./models/User");
+require("./models/Property");
 
 mongoose
   //   .connect(process.env.MONGODB_CONNECTION_STRING, {
@@ -30,6 +31,8 @@ app.use(bodyParser.json());
 //import routes
 require("./routes/login.js")(app);
 require("./routes/register.js")(app);
+require("./routes/allproperties.js")(app);
+require("./routes/property.js")(app);
 
 const PORT = process.env.PORT || 6999;
 // const PORT = 6999;

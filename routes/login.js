@@ -3,6 +3,7 @@ const user = mongoose.model("user");
 
 module.exports = (app) => {
   app.post("/login", (req, res) => {
+    console.log("Inside correct password 1")
     const { userName, password } = req.body;
     user.findOne({userName:userName}).then((userResult => {
       if(userResult){
