@@ -1,21 +1,17 @@
-What is your project all about? What are you trying to achieve?
-		 	The website is a user-friendly, comprehensive online platform designed to simplify and streamline the apartment hunting 
-			experience for those looking to rent in the beautiful city of Boulder, Colorado. 
-			Our goal is to provide prospective tenants with a hassle-free, personalized experience to find the perfect apartment that 
-			matches their unique preferences and requirements.
+### What is your project all about? What are you trying to achieve?
 
-	Objectives:
-	1.Create an intuitive, easy-to-navigate website that offers a seamless user experience.
-	2.Consolidate a wide range of available apartment listings in Boulder, ensuring up-to-date and accurate information.
-	3.Implement advanced search filters and sorting options to allow users to refine their search based on their preferences, 
-	  including budget, location, property size, amenities, pet-friendliness, and more.
-	4.Incorporate a reliable rating and review system that encourages users to provide honest feedback on their rental experiences, 
-	  fostering trust and transparency within the community.
-	5.Promote a sense of community by providing helpful resources on Boulder's neighborhoods, local attractions, 
-	  transportation options, and other essential information for new residents.
-	6.Implement responsive design principles to ensure the website is compatible with a variety of devices, including desktops, 
-	  laptops, tablets, and smartphones.
+The website is a user-friendly, comprehensive online platform designed to simplify and streamline the apartment hunting experience for those looking to rent in the beautiful city of Boulder, Colorado. Our goal is to provide prospective tenants with a hassle-free, personalized experience to find the perfect apartment that matches their unique preferences and requirements.
+The project also aims to let the user book and manage appointments. Also, it will let the users write reviews of properties and these reviews will them be processed through sentiment analysis library and stored into the database with the analysis. The analysis will be used to rate the properties. 
 
+### Objectives:
+
+```
+- Create an intuitive, easy-to-navigate website that offers a seamless user experience.
+- Consolidate a wide range of available apartment listings in Boulder, ensuring up-to-date and accurate information.
+- Implement advanced search filters and sorting options to allow users to refine their search based on their preferences, including budget, location, property size, amenities, pet-friendliness, and more.
+- Incorporate a reliable rating and review system that encourages users to provide honest feedback on their rental experiences, fostering trust and transparency within the community.
+- Implement responsive design principles to ensure the website is compatible with a variety of devices, including desktops, laptops, tablets, and smartphones.
+```
 What design decisions have you made?
 	1	Navigation: Create an intuitive navigation menu that allows users to easily explore different sections of the website. 
 	              Include essential items such as Home, Search, About Us, Resources, and Contact Us. 
