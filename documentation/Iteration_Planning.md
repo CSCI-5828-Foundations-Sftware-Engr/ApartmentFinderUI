@@ -15,3 +15,12 @@ As we progress through the project, we will continue to update this Iteration Pl
 After each iteration, we will update the velocity documentation as follows:
 
 Document the actual story points completed during the iteration. Calculate the team's average velocity for the previous iterations. Adjust the velocity for future iterations based on the calculated average and any changes in project scope or team capacity. Update the iteration prediction using the adjusted velocity. By continually updating our Iteration Planning documentation, we will improve our ability to plan and execute the project effectively.
+
+
+## Iteration Burndown Charts
+
+![Burndown Sprint 1](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/tree/main/documentation/images/burnup_report_sprint1_issues_.png)
+
+![Burndown Sprint 2](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/tree/main/documentation/images/burnup_report_sprint2_issues_.png)
+
+![Burndown Sprint 3](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/tree/main/documentation/images/burnup_report_sprint3_issues_.png)
