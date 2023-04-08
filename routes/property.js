@@ -31,8 +31,8 @@ module.exports = (app) => {
             }
           }))
         }else{
-          console.log(`No property Found for propertyId: ${propertyResult.propertyId}`)
-           res.status(200).send({ property: propertyResult });
+          console.log(`No property Found for propertyId: ${propertyId}`)
+           res.status(201).send({ property: propertyResult });
         }
       })
       .catch((error) => {
