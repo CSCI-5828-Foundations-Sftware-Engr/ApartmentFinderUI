@@ -15,17 +15,20 @@ require("./models/Appointment");
 require("./models/Review");
 require("./models/ReviewAnalysis");
 
-mongoose
-  //   .connect(process.env.MONGODB_CONNECTION_STRING, {
-  .connect(
-    "mongodb+srv://shka5709:fseData123@fseproject.j4lmokk.mongodb.net/Property?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
-  .then(() => console.log("MongoDB has been connected"))
-  .catch((err) => console.log(err));
+const mongooseConnect = require('./dbConnect/dbConnect');
+mongooseConnect.dbconnect().on('error', (err) => console.log("connection to db failed"))
+
+// mongoose
+//   //   .connect(process.env.MONGODB_CONNECTION_STRING, {
+//   .connect(
+//     "mongodb+srv://shka5709:fseData123@fseproject.j4lmokk.mongodb.net/Property?retryWrites=true&w=majority",
+//     {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     }
+//   )
+//   .then(() => console.log("MongoDB has been connected"))
+//   .catch((err) => console.log(err));
 
 //middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -52,3 +55,5 @@ app.get("*", function (request, response) {
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`);
 });
+
+module.exports = app;
