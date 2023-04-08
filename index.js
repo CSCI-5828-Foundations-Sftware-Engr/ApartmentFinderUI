@@ -39,7 +39,7 @@ require("./routes/login.js")(app);
 require("./routes/register.js")(app);
 require("./routes/allproperties.js")(app);
 require("./routes/property.js")(app);
-require("./routes/bookappointment.js")(app);
+require("./routes/appointment.js")(app);
 require("./routes/review.js")(app);
 
 const PORT = process.env.PORT || 6999;
