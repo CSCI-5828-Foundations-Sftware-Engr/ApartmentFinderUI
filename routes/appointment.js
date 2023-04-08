@@ -50,7 +50,7 @@ app.post("/cancelappointment", (req, res) => {
             if(result){
                 console.log("Appointment found");
                 appointment.deleteOne({_id: result._id}).then(function(){
-                    console.log("Data deleted"); // Success
+                    //console.log("Data deleted"); // Success
                     return res.status(200).send({message: "Data deleted"})
                 }).catch(function(error){
                     console.log(error); // Failure
