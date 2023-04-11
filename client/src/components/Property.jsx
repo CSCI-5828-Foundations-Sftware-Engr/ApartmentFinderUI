@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
+import AppointmentDialog from "./AppointmentDialog";
 
 export default function Property() {
   const { id } = useParams();
@@ -23,7 +24,7 @@ export default function Property() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ propertyId: new String(id) }),
+      body: JSON.stringify({ propertyId: id.toString() }),
     })
       .then((response) => {
         console.log(response.status);
@@ -64,6 +65,9 @@ export default function Property() {
               .map((photo, key) => photo.href)}
             alt={property.data.propertyId}
           />
+        </div>
+        <div>
+          <AppointmentDialog property = {property}></AppointmentDialog>
         </div>
       </div>
     );
