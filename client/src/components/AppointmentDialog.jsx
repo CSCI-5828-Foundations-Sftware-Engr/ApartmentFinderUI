@@ -19,10 +19,6 @@ export default function AppointmentDialog(props) {
     setOpen(false);
   };
 
-  // const [formData, setFormData] = React.useState({
-  //   appointmentDate: null,
-  //   appointmentTime: null
-  // });
   const [formData,setFormData] = React.useState({
     appointmentDateTime: null
   });
@@ -31,9 +27,12 @@ export default function AppointmentDialog(props) {
     event.preventDefault();
     const apptInfo = {
       propertyId: props.property.data.propertyId, 
-      userName: "Test1", 
+      userName: localStorage.getItem("userName"), 
       appointmentDate: dayjs(formData.appointmentDateTime).toDate().toDateString(), 
-      appointmentTime:dayjs(formData.appointmentDateTime).toDate().toTimeString()};
+      appointmentTime:dayjs(formData.appointmentDateTime).toDate().toTimeString()
+    };
+
+    console.log(apptInfo);
 
     let err = false;
     for(let field in apptInfo)
@@ -75,8 +74,6 @@ export default function AppointmentDialog(props) {
             Please select a date and time that you would like to schedule a showing.
           </DialogContentText>
           <form onSubmit={handleSubmit}>
-            {/* <DatePicker label="Select a date" margin='normal' value={formData.appointmentDate} onChange={(newValue) => setFormData({appointmentDate:newValue, appointmentTime:formData.appointmentTime})}/> */}
-            {/* <TimePicker label="Select a time" margin='normal' value={formData.appointmentTime} onChange={(newValue) => setFormData({appointmentDate:formData.appointmentDate, appointmentTime:newValue})}/> */}
             <DateTimePicker sx={{m:2, width:3/4}} label="Select a date and time" value = {formData.appointmentDateTime} onChange={(newValue) => setFormData({appointmentDateTime:newValue})} />
           </form>
         </DialogContent>  
