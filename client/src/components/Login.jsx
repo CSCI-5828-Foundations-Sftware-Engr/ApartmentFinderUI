@@ -4,7 +4,10 @@ import PropTypes from "prop-types";
 
 async function loginUser(credentials) {
   console.log("Inside login");
-  return fetch("http://localhost:6999/login", {
+  const domain =
+    process.env.NODE_ENV === "production" ? "" : "http://localhost:6999";
+  const url = "/login";
+  return fetch(`${domain}${url}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -31,7 +34,10 @@ async function loginUser(credentials) {
 }
 
 async function registerUser(credentials) {
-  return fetch("http://localhost:6999/register", {
+  const domain =
+    process.env.NODE_ENV === "production" ? "" : "http://localhost:6999";
+  const url = "/register";
+  return fetch(`${domain}${url}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -85,7 +91,11 @@ export default function Login({ setToken }) {
       });
       if (token === "error") {
         setIsSignUp(true);
-      } else setToken(token);
+      } else {
+        console.log(token);
+        localStorage.setItem("userName", token.user.userName);
+        setToken(token);
+      };
     }
   };
 

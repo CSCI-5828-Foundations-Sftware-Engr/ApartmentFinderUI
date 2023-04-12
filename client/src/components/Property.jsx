@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
+import AppointmentDialog from "./AppointmentDialog";
 
 import PropertyTable from "./PropertyTable";
 
 export default function Property() {
   const { id } = useParams();
-  const url = "http://localhost:6999/property";
+  const domain =
+    process.env.NODE_ENV === "production" ? "" : "http://localhost:6999";
+  const url = "/property";
   const [property, setProperty] = useState({
     loading: false,
     data: null,
@@ -20,12 +23,12 @@ export default function Property() {
       data: null,
       error: false,
     });
-    fetch(url, {
+    fetch(`${domain}${url}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ propertyId: new String(id) }),
+      body: JSON.stringify({ propertyId: id.toString() }),
     })
       .then((response) => {
         console.log(response.status);
@@ -67,6 +70,9 @@ export default function Property() {
             alt={property.data.propertyId}
           />
           <PropertyTable property={property.data}/> 
+        </div>
+        <div>
+          <AppointmentDialog property = {property}></AppointmentDialog>
         </div>
       </div>
     );
