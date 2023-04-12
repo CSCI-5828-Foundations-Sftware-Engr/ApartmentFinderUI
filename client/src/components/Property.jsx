@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
 
+import PropertyTable from "./PropertyTable";
+
 export default function Property() {
   const { id } = useParams();
   const url = "http://localhost:6999/property";
@@ -64,6 +66,7 @@ export default function Property() {
               .map((photo, key) => photo.href)}
             alt={property.data.propertyId}
           />
+          <PropertyTable property={property.data}/> 
         </div>
       </div>
     );
