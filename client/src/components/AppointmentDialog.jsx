@@ -44,7 +44,9 @@ export default function AppointmentDialog(props) {
     }
     
     if(!err){
-      fetch("http://localhost:6999/bookappointment",{
+      const domain = process.env.NODE_ENV === "production" ? "" : "http://localhost:6999/";
+      const url = "/bookappointment";
+      fetch(`${domain}${url}`,{
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
