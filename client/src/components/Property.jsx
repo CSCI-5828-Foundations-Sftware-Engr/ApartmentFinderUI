@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import Loader from "./Loader";
 import AppointmentDialog from "./AppointmentDialog";
 
+import PropertyTable from "./PropertyTable";
+
 export default function Property() {
   const { id } = useParams();
   const domain =
@@ -67,6 +69,7 @@ export default function Property() {
               .map((photo, key) => photo.href)}
             alt={property.data.propertyId}
           />
+          <PropertyTable property={property.data}/> 
         </div>
         <div>
           <AppointmentDialog property = {property}></AppointmentDialog>
