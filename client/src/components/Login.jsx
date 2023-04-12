@@ -91,7 +91,11 @@ export default function Login({ setToken }) {
       });
       if (token === "error") {
         setIsSignUp(true);
-      } else setToken(token);
+      } else {
+        console.log(token);
+        localStorage.setItem("userName", token.user.userName);
+        setToken(token);
+      };
     }
   };
 
