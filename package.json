@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "amqplib": "^0.10.3",
     "apos-to-lex-form": "^1.0.5",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
