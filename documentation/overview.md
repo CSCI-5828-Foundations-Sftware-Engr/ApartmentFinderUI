@@ -38,6 +38,8 @@ We are using MERN stack to design out project. In addition to that, we will be d
     Initially:
     Backend: Rithik, Shreyas
     Frontend: Ishika, Evan and Lakshmi
+    Deployment: Lakshmi
+    Data Collection & Data Analyzer: Shreyas
 
     In the future the work is distributed in such a way that everyone gets a chance to work on everything and get hands on experience.
     The tasks that each of us worked on are on the JIRA board.
