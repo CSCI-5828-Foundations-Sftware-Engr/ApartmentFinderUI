@@ -35,7 +35,6 @@ We are using MERN stack to design out project. In addition to that, we will be d
 
 ## How is work distributed across the team? Who is doing what for each iteration?
 
-    Initially:
     Backend: Rithik, Shreyas
     Frontend: Ishika, Evan and Lakshmi
     Deployment: Lakshmi
