@@ -5,7 +5,9 @@ import AppointmentDialog from "./AppointmentDialog";
 
 export default function Property() {
   const { id } = useParams();
-  const url = "http://localhost:6999/property";
+  const domain =
+    process.env.NODE_ENV === "production" ? "" : "http://localhost:6999";
+  const url = "/property";
   const [property, setProperty] = useState({
     loading: false,
     data: null,
@@ -19,7 +21,7 @@ export default function Property() {
       data: null,
       error: false,
     });
-    fetch(url, {
+    fetch(`${domain}${url}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

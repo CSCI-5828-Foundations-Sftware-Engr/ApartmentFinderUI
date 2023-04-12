@@ -3,7 +3,9 @@ import Loader from "./Loader";
 import PropertyCard from "./PropertyCard";
 
 export default function Dashboard() {
-  const url = "http://localhost:6999/allproperties";
+  const domain =
+    process.env.NODE_ENV === "production" ? "" : "http://localhost:6999";
+  const url = "/allproperties";
   const [properties, setProperties] = useState({
     loading: false,
     data: null,
@@ -17,7 +19,7 @@ export default function Dashboard() {
       error: false,
     });
 
-    fetch(url, {
+    fetch(`${domain}${url}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
