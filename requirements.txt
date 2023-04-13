@@ -1,0 +1,4 @@
+pika==1.2.0
+pymongo==4.3.3
+flair==0.9
+gensim==3.8.3
