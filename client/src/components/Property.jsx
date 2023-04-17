@@ -4,6 +4,7 @@ import Loader from "./Loader";
 import AppointmentDialog from "./AppointmentDialog";
 
 import PropertyTable from "./PropertyTable";
+import ReviewMetrics from "./reviewMetrics";
 
 export default function Property() {
   const { id } = useParams();
@@ -15,10 +16,20 @@ export default function Property() {
     data: null,
     error: false,
   });
+  const [reviewAnalysis, setReviewAnalysis] = useState({
+    loading: false,
+    data: null,
+    error: false,
+  });
   let content = null;
 
   useEffect(() => {
     setProperty({
+      loading: true,
+      data: null,
+      error: false,
+    });
+    setReviewAnalysis({
       loading: true,
       data: null,
       error: false,
@@ -40,9 +51,19 @@ export default function Property() {
           data: d.property,
           error: false,
         });
+        setReviewAnalysis({
+          loading: false,
+          data: d.reviewAnalysis,
+          error: false,
+        });
       })
       .catch(() => {
         setProperty({
+          loading: false,
+          data: null,
+          error: true,
+        });
+        setReviewAnalysis({
           loading: false,
           data: null,
           error: true,
@@ -73,6 +94,9 @@ export default function Property() {
         </div>
         <div>
           <AppointmentDialog property = {property}></AppointmentDialog>
+        </div>
+        <div>
+          <ReviewMetrics data={reviewAnalysis.data}></ReviewMetrics>
         </div>
       </div>
     );
