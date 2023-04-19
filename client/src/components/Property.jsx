@@ -89,7 +89,7 @@ export default function Property() {
   }
 
   if (property.data) {
-    console.log(property);
+    const hasReviews = Object.keys(property.reviews.data).length !== 0;
     content = (
       <div>
         <Typography variant="h4">{property.data.propertyId}</Typography>
@@ -112,7 +112,7 @@ export default function Property() {
             </Grid>
           </Grid>
           <Box sx={{mx:'auto', p:'10px'}}>
-            {property.reviews.data && <ReviewList reviews = {property.reviews}></ReviewList>}
+            { hasReviews && <ReviewList reviews = {property.reviews}></ReviewList>}
           </Box> 
         </div>
         <div>
