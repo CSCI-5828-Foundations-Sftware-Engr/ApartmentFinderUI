@@ -20,9 +20,20 @@ Document the actual story points completed during the iteration. Calculate the t
 
 
 
+## Iteration Burnup Charts
+![Burnup Chart Sprint 1](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burnup_report_sprint1_issues_.png)
+
+![Burnup Chart Sprint 2](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burnup_report_sprint2_issues_.png)
+
+![Burnup Chart Sprint 3](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burnup_report_sprint3_issues_.png)
+
+
 ## Iteration Burndown Charts
-![Burndown Chart Sprint 1](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burnup_report_sprint1_issues_.png)
+![Burndown Chart Sprint 1](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burndown_report_sprint1_issues_.png)
 
-![Burndown Chart Sprint 2](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burnup_report_sprint2_issues_.png)
+![Burndown Chart Sprint 2](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burndown_report_sprint2_issues_.png)
 
-![Burndown Chart Sprint 3](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burnup_report_sprint3_issues_.png)
+![Burndown Chart Sprint 3](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burndown_report_sprint3_issues_.png)
+
+
+
