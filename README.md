@@ -24,3 +24,23 @@ Innovation Insurgents - FSE Spring 2023
 - To run on localhost, In root directory, run command "npm start" to start the server.
 - In another terminal, "cd client && npm start" to start the client.
 - Launch http://localhost:3000/ in a browser.
+
+## Final Project Submission Rubric
+| Rubric Item                                 | Github repo location |
+|---------------------------------------------|----------------------|
+| Web application - basic form, reporting     |                      |
+| Data collection                             |                      |
+| Data analyzer                               |                      |
+| Unit tests                                  |                      |
+| Data persistence                            |                      |
+| any data store                              |                      |
+| Rest collaboration internal or API endpoint |                      |
+| Product environment                         |                      |
+| Integration tests                           |                      |
+| Using mock objects or any test doubles      |                      |
+| Continuous integration                      |                      |
+| Production monitoring                       |                      |
+| instrumenting                               |                      |
+| Acceptance tests                            |                      |
+| Event collaboration messaging               |                      |
+| Continuous delivery                         |                      |
