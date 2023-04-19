@@ -15,10 +15,7 @@ After each iteration, we will update the velocity documentation as follows:
 Document the actual story points completed during the iteration. Calculate the team's average velocity for the previous iterations. Adjust the velocity for future iterations based on the calculated average and any changes in project scope or team capacity. Update the iteration prediction using the adjusted velocity. By continually updating our Iteration Planning documentation, we will improve our ability to plan and execute the project effectively.
 
 ### Cumulative Flow Diagram
-
 ![Cumulative Flow Diagram](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/cumulative_flow_diagram.png)
-
-
 
 ## Iteration Burnup Charts
 ![Burnup Chart Sprint 1](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burnup_report_sprint1_issues_.png)
