@@ -32,7 +32,7 @@ module.exports = (app) => {
         } else {
           newReview.save().then((savedReview) => {
             if (savedReview) {
-              //const analysis = getAnalysis(req.body.review);
+              const analysis = getAnalysis(req.body.review);
               //console.log(analysis);
               // const lexedReview = aposToLexForm(req.body.review);
               // const casedReview = lexedReview.toLowerCase();
@@ -267,5 +267,5 @@ function getAnalysis(review) {
   const filteredReview = SW.removeStopwords(tokenizedReview);
   const { SentimentAnalyzer, PorterStemmer } = natural;
   const analyzer = new SentimentAnalyzer("English", PorterStemmer, "afinn");
-  return (analysis = analyzer.getSentiment(filteredReview));
+  return (analyzer.getSentiment(filteredReview));
 }

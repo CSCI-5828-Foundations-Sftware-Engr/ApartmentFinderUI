@@ -26,7 +26,7 @@ module.exports = (app) => {
               
             }else{
               console.log(`No reviews found for ${propertyResult.propertyId}`);
-               res.status(200).json({ property: propertyResult, reviews: {}, reviewAnalysis: {} });
+               res.status(200).json({ property: propertyResult, reviews:{}, reviewAnalysis:{} });
 
             }
           }))
