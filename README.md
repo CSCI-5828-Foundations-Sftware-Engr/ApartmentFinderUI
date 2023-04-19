@@ -38,8 +38,7 @@ Innovation Insurgents - FSE Spring 2023
 | Integration tests                           |                      |
 | Using mock objects or any test doubles      |                      |
 | Continuous integration                      |                      |
-| Production monitoring                       |                      |
-| instrumenting                               |                      |
+| Production monitoring instrumenting         |                      |
 | Acceptance tests                            |                      |
 | Event collaboration messaging               |                      |
 | Continuous delivery                         |                      |
