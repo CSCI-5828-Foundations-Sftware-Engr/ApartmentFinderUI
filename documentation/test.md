@@ -8,4 +8,4 @@ Moreover, we have integrated these tests in our Continuous Integration pipeline 
 
 To run the tests locally, just run "npm test" and then the npm package manager will do it's magic. 
 
-For now, we believe we have written all the test cases for our code. 
+For now, we believe we have written all the test cases for our code. The current status of our tests are they they pass!
