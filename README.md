@@ -32,8 +32,7 @@ Innovation Insurgents - FSE Spring 2023
 | Data collection                             |                      |
 | Data analyzer                               |                      |
 | Unit tests                                  |                      |
-| Data persistence                            |                      |
-| any data store                              |                      |
+| Data persistence - any data store           |                      |
 | Rest collaboration internal or API endpoint |                      |
 | Product environment                         |                      |
 | Integration tests                           |                      |
