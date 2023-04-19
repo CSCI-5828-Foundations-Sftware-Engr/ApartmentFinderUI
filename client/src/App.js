@@ -21,6 +21,7 @@ import Login from "./components/Login";
 // import Home component
 import Home from "./components/Home";
 import Property from "./components/Property";
+import { Typography, Box } from "@mui/material";
 
 function App() {
   const [token, setToken] = useState();
@@ -32,7 +33,9 @@ function App() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className="App">
-        <h1>ApartmentFinder</h1>
+        <Box sx={{backgroundColor:'#989ea6'}}>
+          <Typography variant="h2" sx={{fontWeight:'bold', textDecoration:'none'}}> ApartmentFinder </Typography>
+        </Box>
         <Router>
           <Routes>
             <Route path="/" exact element={<Dashboard />} />

@@ -20,13 +20,13 @@ module.exports = (app) => {
                    return res.status(200).json({ property: propertyResult, reviews: reviewResult, reviewAnalysis: reviewAnalysisResult });
                 }else{
                   console.log(`No reviewsAnalysis found for ${propertyResult.propertyId}`);
-                   res.status(200).json({ property: propertyResult, reviews: reviewResult, reviewAnalysis: {} });
+                   res.status(200).json({ property: propertyResult, reviews: reviewResult, reviewAnalysis: null });
                 }
               }))
               
             }else{
               console.log(`No reviews found for ${propertyResult.propertyId}`);
-               res.status(200).json({ property: propertyResult, reviews: {}, reviewAnalysis: {} });
+               res.status(200).json({ property: propertyResult, reviews: null, reviewAnalysis: null });
 
             }
           }))

@@ -4,6 +4,10 @@ import Loader from "./Loader";
 import AppointmentDialog from "./AppointmentDialog";
 
 import PropertyTable from "./PropertyTable";
+import ReviewList from "./ReviewList";
+import { Typography, Box, Grid } from "@mui/material";
+import ReviewDialog from "./ReviewDialog";
+
 
 export default function Property() {
   const { id } = useParams();
@@ -13,6 +17,7 @@ export default function Property() {
   const [property, setProperty] = useState({
     loading: false,
     data: null,
+    reviews: null,
     error: false,
   });
   let content = null;
@@ -21,6 +26,7 @@ export default function Property() {
     setProperty({
       loading: true,
       data: null,
+      reviews: null,
       error: false,
     });
     fetch(`${domain}${url}`, {
@@ -38,6 +44,7 @@ export default function Property() {
         setProperty({
           loading: false,
           data: d.property,
+          reviews: { data: d.reviews, analysis: d.reviewAnalysis},
           error: false,
         });
       })
@@ -45,6 +52,7 @@ export default function Property() {
         setProperty({
           loading: false,
           data: null,
+          reviews: null,
           error: true,
         });
       });
@@ -59,9 +67,10 @@ export default function Property() {
   }
 
   if (property.data) {
+    console.log(property);
     content = (
       <div>
-        <h1 className="text-2xl font-bold">{property.data.propertyId}</h1>
+        <Typography variant="h4">{property.data.propertyId}</Typography>
         <div>
           <img
             src={property.data.photos
@@ -69,13 +78,28 @@ export default function Property() {
               .map((photo, key) => photo.href)}
             alt={property.data.propertyId}
           />
-          <PropertyTable property={property.data}/> 
+          <Box sx={{mx:'auto', p:'10px'}}>
+            <PropertyTable property={property.data}/> 
+          </Box>
+          <Grid container direction="row" justifyContent="center" spacing={2}>
+            <Grid item>
+              <AppointmentDialog property = {property}></AppointmentDialog>
+            </Grid>
+            <Grid item>
+              <ReviewDialog property={property}></ReviewDialog>
+            </Grid>
+          </Grid>
+          <Box sx={{mx:'auto', p:'10px'}}>
+            {property.reviews.data && <ReviewList reviews = {property.reviews}></ReviewList>}
+          </Box> 
         </div>
-        <div>
-          <AppointmentDialog property = {property}></AppointmentDialog>
-        </div>
+        
       </div>
     );
   }
-  return <div>{content}</div>;
+  return(
+    <div>
+      {content}
+    </div>
+  );
 }
