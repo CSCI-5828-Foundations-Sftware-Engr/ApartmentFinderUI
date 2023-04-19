@@ -4,9 +4,11 @@ import Loader from "./Loader";
 import AppointmentDialog from "./AppointmentDialog";
 
 import PropertyTable from "./PropertyTable";
+
 import ReviewList from "./ReviewList";
 import { Typography, Box, Grid } from "@mui/material";
 import ReviewDialog from "./ReviewDialog";
+import ReviewMetrics from "./reviewMetrics";
 
 
 export default function Property() {
@@ -20,6 +22,11 @@ export default function Property() {
     reviews: null,
     error: false,
   });
+  const [reviewAnalysis, setReviewAnalysis] = useState({
+    loading: false,
+    data: null,
+    error: false,
+  });
   let content = null;
 
   useEffect(() => {
@@ -27,6 +34,11 @@ export default function Property() {
       loading: true,
       data: null,
       reviews: null,
+      error: false,
+    });
+    setReviewAnalysis({
+      loading: true,
+      data: null,
       error: false,
     });
     fetch(`${domain}${url}`, {
@@ -47,12 +59,22 @@ export default function Property() {
           reviews: { data: d.reviews, analysis: d.reviewAnalysis},
           error: false,
         });
+        setReviewAnalysis({
+          loading: false,
+          data: d.reviewAnalysis,
+          error: false,
+        });
       })
       .catch(() => {
         setProperty({
           loading: false,
           data: null,
           reviews: null,
+          error: true,
+        });
+        setReviewAnalysis({
+          loading: false,
+          data: null,
           error: true,
         });
       });
@@ -93,7 +115,9 @@ export default function Property() {
             {property.reviews.data && <ReviewList reviews = {property.reviews}></ReviewList>}
           </Box> 
         </div>
-        
+        <div>
+          <ReviewMetrics data={reviewAnalysis.data}></ReviewMetrics>
+        </div>
       </div>
     );
   }
