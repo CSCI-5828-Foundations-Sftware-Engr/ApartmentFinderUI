@@ -12,7 +12,7 @@ Innovation Insurgents - FSE Spring 2023
 
 |Website|URL|
 |:---|:---:|
-|Wiki|[Link] (https://github.com/CSCI-5828-Foundations-Sftware-Engr/5828_s23/wiki/Apartment-Finder)
+|Wiki|[Link](https://github.com/CSCI-5828-Foundations-Sftware-Engr/5828_s23/wiki/Apartment-Finder) |
 |Overview|[Link](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/overview.md)|
 |User stories|[Link](https://fse-project.atlassian.net/jira/software/projects/FA/boards/1)|
 |GitHub repository|[Link](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI)|
