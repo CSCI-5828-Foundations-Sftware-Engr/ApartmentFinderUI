@@ -269,3 +269,5 @@ function getAnalysis(review) {
   const analyzer = new SentimentAnalyzer("English", PorterStemmer, "afinn");
   return (analyzer.getSentiment(filteredReview));
 }
+
+module.exports.getAnalysis = getAnalysis;
