@@ -21,10 +21,17 @@ import Login from "./components/Login";
 // import Home component
 import Home from "./components/Home";
 import Property from "./components/Property";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, IconButton, AppBar, Toolbar} from "@mui/material";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 function App() {
   const [token, setToken] = useState();
+
+  const handleLogout = () => {
+    setToken({});
+    localStorage.clear();
+    window.location.reload(false);
+  }
 
   if (!token) {
     return <Login setToken={setToken} />;
@@ -33,8 +40,20 @@ function App() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className="App">
-        <Box sx={{backgroundColor:'#989ea6'}}>
-          <Typography variant="h2" sx={{fontWeight:'bold', textDecoration:'none'}}> ApartmentFinder </Typography>
+        <Box sx={{flexGrow:1}}>
+          <AppBar position="static" sx={{backgroundColor:'#989ea6'}}>
+            <Toolbar>
+              <IconButton 
+              edge="start"
+              size="large" 
+              // sx={{mr:}} 
+              onClick={handleLogout}
+              > 
+                <LogoutIcon /> 
+              </IconButton>
+              <Typography variant="h2" sx={{fontWeight:'bold', flexGrow:1, align:'center'}}> ApartmentFinder </Typography>
+            </Toolbar>
+          </AppBar>
         </Box>
         <Router>
           <Routes>
