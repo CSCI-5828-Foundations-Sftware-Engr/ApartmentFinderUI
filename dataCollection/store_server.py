@@ -15,8 +15,8 @@ rabbitMQHost = os.getenv("RABBITMQ_HOST") or "localhost"
 print(f"Connecting to rabbitmq({rabbitMQHost})")
 
 
-def get_database():
-    return mongodb_client[config["DB_NAME"]]
+def get_database(client):
+    return client[config["DB_NAME"]]
 
 
 def get_collection_name(dbname):
@@ -70,7 +70,7 @@ def store_data(collection_name, propertyData):
 def callback(ch, method, properties, body):
     data = jsonpickle.decode(body)
     propertyData = json.loads(data['propertyData'].text)
-    dbname = get_database()
+    dbname = get_database(mongodb_client)
     collection_name = get_collection_name(dbname)
     store_data(collection_name, propertyData)
     print(" [x] Done")
