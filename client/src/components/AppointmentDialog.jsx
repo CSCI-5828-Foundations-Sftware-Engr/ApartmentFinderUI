@@ -25,9 +25,10 @@ export default function AppointmentDialog(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const user = localStorage.getItem("user");
     const apptInfo = {
       propertyId: props.property.data.propertyId, 
-      userName: localStorage.getItem("userName"), 
+      userName: JSON.parse(user).username, 
       appointmentDate: dayjs(formData.appointmentDateTime).toDate().toDateString(), 
       appointmentTime:dayjs(formData.appointmentDateTime).toDate().toTimeString()
     };

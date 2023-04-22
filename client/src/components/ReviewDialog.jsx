@@ -22,10 +22,11 @@ export default function ReviewDialog(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const user = localStorage.getItem("user");
 
     let reviewInfo = {
       propertyId: props.property.data.propertyId,
-      userName: localStorage.getItem("userName"),
+      userName: JSON.parse(user).userName,
       review: formData
     }
 

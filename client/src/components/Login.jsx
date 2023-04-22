@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
 import PropTypes from "prop-types";
 
@@ -45,13 +45,13 @@ async function registerUser(credentials) {
 
     body: JSON.stringify(credentials),
   })
-    .then((response) => {
-      //TODO
-      //if the response status is 200, then the user has been registered.
-      //if the response status is 404, then the user has not been registered.(Because username was already there)
-      //can we add a functionality that all the fields in the register form are added by the user?
-      console.log(response.status);
-      if (!response.ok) {
+  .then((response) => {
+    //TODO
+    //if the response status is 200, then the user has been registered.
+    //if the response status is 404, then the user has not been registered.(Because username was already there)
+    //can we add a functionality that all the fields in the register form are added by the user?
+    console.log(response.status);
+    if (!response.ok) {
         throw new Error(response.statusText);
       }
       return response.json();
@@ -59,24 +59,35 @@ async function registerUser(credentials) {
     .catch((err) => {
       console.log(err);
     });
-}
-
-export default function Login({ setToken }) {
-  const [userName, setUserName] = useState();
-  const [password, setPassword] = useState();
-  const [isSignUp, setIsSignUp] = useState(false);
-  const [contactNo, setContact] = useState();
-  const [name, setName] = useState();
-  const [emailId, setEmail] = useState();
-
-  const handleToggleSignUp = () => {
-    setIsSignUp(!isSignUp);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (isSignUp) {
-      const token = await registerUser({
+  }
+  
+  export default function Login({ setToken }) {
+    const [userName, setUserName] = useState();
+    const [password, setPassword] = useState();
+    const [isSignUp, setIsSignUp] = useState(false);
+    const [contactNo, setContact] = useState();
+    const [name, setName] = useState();
+    const [emailId, setEmail] = useState();
+    //
+    // help from https://gist.github.com/onedebos/bbf7cd4634bce53103c1cfefa6164637
+    useEffect(() => {
+      const loggedInUser = localStorage.getItem("user");
+      if(loggedInUser) {
+        const foundUser = JSON.parse(loggedInUser);
+        console.log(foundUser);
+        setToken(foundUser);
+      }
+    
+    });
+    
+    const handleToggleSignUp = () => {
+      setIsSignUp(!isSignUp);
+    };
+    
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      if (isSignUp) {
+        const token = await registerUser({
         name,
         password,
         userName,
@@ -92,12 +103,13 @@ export default function Login({ setToken }) {
       if (token === "error") {
         setIsSignUp(true);
       } else {
-        console.log(token);
-        localStorage.setItem("userName", token.user.userName);
-        setToken(token);
+        console.log(token.user);
+        localStorage.setItem("user", JSON.stringify(token.user));
+        setToken(token.user);
       };
     }
   };
+
 
   return (
     <div className="login-wrapper">
