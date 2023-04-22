@@ -33,20 +33,7 @@ module.exports = (app) => {
           newReview.save().then((savedReview) => {
             if (savedReview) {
               const analysis = getAnalysis(req.body.review);
-              //console.log(analysis);
-              // const lexedReview = aposToLexForm(req.body.review);
-              // const casedReview = lexedReview.toLowerCase();
-              // const alphaOnlyReview = casedReview.replace(/[^a-zA-Z\s]+/g, '');
-              // const { WordTokenizer } = natural;
-              // const tokenizer = new WordTokenizer();
-              // const tokenizedReview = tokenizer.tokenize(alphaOnlyReview);
-              // tokenizedReview.forEach((word, index) => {
-              //     tokenizedReview[index] = spellCorrector.correct(word);
-              // })
-              // const filteredReview = SW.removeStopwords(tokenizedReview);
-              // const { SentimentAnalyzer, PorterStemmer } = natural;
-              // const analyzer = new SentimentAnalyzer('English', PorterStemmer, 'afinn');
-              // const analysis = analyzer.getSentiment(filteredReview);
+              console.log(analysis);
               reviewAnalysis
                 .findOne({ propertyId: req.body.propertyId })
                 .then((reviewData) => {
@@ -56,13 +43,15 @@ module.exports = (app) => {
                     //Positive review
                     if (analysis > 0) {
                       const noOfReviews = reviewData.noOfReviews + 1;
-                      const positve = reviewData.positve + 1;
+                      const positive = reviewData.positive + 1;
+                      console.log(`Noof Reviews: ${noOfReviews}`);
+                      console.log(`Positive Reviews: ${positive}`);
                       reviewAnalysis
                         .updateOne(
                           { propertyId: req.body.propertyId },
                           {
                             noOfReviews: noOfReviews,
-                            positive: positve,
+                            positive: positive,
                           }
                         )
                         .then((savedReview) => {
@@ -134,6 +123,7 @@ module.exports = (app) => {
                   }
                   //If review doesnt exist for the property, add a new entry with initial values
                   else {
+                    //Positive Review
                     if (analysis > 0) {
                       const positive = 1;
                       const neutral = 0;
@@ -189,7 +179,7 @@ module.exports = (app) => {
                           });
                         });
                     }
-                    //
+                    // Neutral Review
                     else {
                       const positive = 0;
                       const neutral = 1;
