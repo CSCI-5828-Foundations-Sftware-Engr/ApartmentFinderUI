@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loader from "./Loader";
 import PropertyCard from "./PropertyCard";
+import { Stack } from '@mui/material'
 
 export default function Dashboard() {
   const domain =
@@ -58,15 +59,14 @@ export default function Dashboard() {
   if (properties.data) {
     content = properties.data.map((property, key) => (
       <div>
-        <PropertyCard property={property} />
+        <PropertyCard property={property}/>
       </div>
     ));
   }
 
   return (
-    <div className="font-bold text-2xl">
-      <h1>Apartment List</h1>
+    <Stack margin='1'>
       {content}
-    </div>
+    </Stack>
   );
 }
