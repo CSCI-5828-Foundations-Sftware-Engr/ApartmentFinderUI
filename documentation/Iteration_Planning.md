@@ -14,6 +14,8 @@ After each iteration, we will update the velocity documentation as follows:
 
 Document the actual story points completed during the iteration. Calculate the team's average velocity for the previous iterations. Adjust the velocity for future iterations based on the calculated average and any changes in project scope or team capacity. Update the iteration prediction using the adjusted velocity. By continually updating our Iteration Planning documentation, we will improve our ability to plan and execute the project effectively.
 
+For our final project updates, we went through and closed all open issues that have been completed. We have been able to clear the JIRA board and our project meets rubric requirements in our MVP. 
+
 ### Cumulative Flow Diagram
 ![Cumulative Flow Diagram](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/cumulative_flow_diagram.png)
 
@@ -24,6 +26,8 @@ Document the actual story points completed during the iteration. Calculate the t
 
 ![Burnup Chart Sprint 3](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burnup_report_sprint3_issues_.png)
 
+![Burnup Chart Sprint 4](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burnup_report_sprint4_issues_.png)
+
 
 ## Iteration Burndown Charts
 ![Burndown Chart Sprint 1](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burndown_sprint1_issues_.png)
@@ -31,6 +35,7 @@ Document the actual story points completed during the iteration. Calculate the t
 ![Burndown Chart Sprint 2](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burndown_sprint2_issues_.png)
 
 ![Burndown Chart Sprint 3](https://github.com/CSCI-5828-Foundations-Sftware-Engr/ApartmentFinderUI/blob/main/documentation/images/burndown_sprint3_issues_.png)
+
 
 
 
